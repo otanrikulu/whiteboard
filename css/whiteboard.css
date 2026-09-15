@@ -1,0 +1,213 @@
+/* whiteboard.css — project-specific styles layered on the reused ../css/style.css
+   Only additions/overrides live here; shared tokens (--ink,--muted,--line),
+   .tooltip, .card, .subtitle, .chart-note, #error, .back are inherited. */
+
+body.wide {
+    max-width: 1120px;
+}
+
+header h1 {
+    margin-bottom: 4px;
+}
+
+.story-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 26px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 5;
+}
+
+.story-nav a {
+    padding: 7px 13px;
+    text-decoration: none;
+    background: #f1f4f8;
+    color: #1f3864;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.story-nav a:hover {
+    background: #1f3864;
+    color: #fff;
+}
+
+main section {
+    margin: 34px 0;
+    scroll-margin-top: 70px;
+}
+
+section.card {
+    background: #fafbfc;
+}
+
+.tag-when {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: #eef1f6;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1px 9px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* condition legend */
+.cond-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.cond-legend .item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--ink);
+}
+
+.cond-legend .swatch {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+/* shared svg chrome */
+.wb-svg {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    max-width: 100%;
+    height: auto;
+}
+
+.axis-title {
+    font-size: 12px;
+    fill: var(--muted);
+}
+
+.ref-line {
+    stroke: #888;
+    stroke-dasharray: 4 3;
+    stroke-width: 1;
+}
+
+.typical-band {
+    fill: #1f3864;
+    opacity: 0.06;
+}
+
+.grid line {
+    stroke: #eef1f6;
+}
+
+.grid path {
+    stroke: none;
+}
+
+/* controls row (heatmap / network / comparison) */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 14px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.controls button {
+    font-size: 13px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #f1f4f8;
+}
+
+.controls button.active {
+    background: #1f3864;
+    color: #fff;
+    border-color: #1f3864;
+}
+
+.controls input[type="range"] {
+    vertical-align: middle;
+}
+
+/* heatmap */
+.hm-cell {
+    stroke: #fff;
+    stroke-width: 1;
+}
+
+.hm-value {
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+}
+
+.hm-label {
+    font-size: 12px;
+    fill: var(--ink);
+}
+
+/* network */
+.net-link {
+    stroke: #9aa5b1;
+}
+
+.net-node {
+    stroke: #fff;
+    stroke-width: 1.5;
+    cursor: pointer;
+}
+
+.net-label {
+    font-size: 11px;
+    fill: var(--ink);
+    pointer-events: none;
+}
+
+/* comparison legend chips */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 9px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+    opacity: 0.45;
+}
+
+.chip.on {
+    opacity: 1;
+    border-color: #1f3864;
+}
+
+.chip .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
