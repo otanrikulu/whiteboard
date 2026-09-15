@@ -1,6 +1,122 @@
-/* whiteboard.css — project-specific styles layered on the reused ../css/style.css
-   Only additions/overrides live here; shared tokens (--ink,--muted,--line),
-   .tooltip, .card, .subtitle, .chart-note, #error, .back are inherited. */
+/* whiteboard.css — self-contained stylesheet for the STATS 401 whiteboard.
+   Previously layered on ../css/style.css; the rules that layer depended on are
+   now merged in below (tokens, base document, shared components) so this file
+   stands alone and no longer requires ../css/style.css. */
+
+/* ---- design tokens (merged from style.css :root) ---- */
+:root {
+    --ink: #1f2328;
+    --muted: #57606a;
+    --line: #d0d7de;
+}
+
+/* ---- base document (merged from style.css) ---- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* inline code (merged from style.css) */
+code {
+    font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+    font-size: 0.9em;
+    background: #eef1f6;
+    color: #1f3864;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #e1e6ef;
+    white-space: nowrap;
+}
+
+/* ---- shared components used by the whiteboard (merged from style.css) ---- */
+.subtitle {
+    color: var(--muted);
+    margin: 0 0 28px;
+}
+
+.chart-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 12px;
+}
+
+.caveat {
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+}
+
+#error {
+    display: none;
+    color: #b42318;
+    background: #fef3f2;
+    border: 1px solid #fecdca;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+}
+
+a.back {
+    display: inline-block;
+    margin-top: 32px;
+    color: #0969da;
+    text-decoration: none;
+}
+
+a.back:hover {
+    text-decoration: underline;
+}
+
+.tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 8px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 14px;
+}
+
+/* dataset meta panel (merged from style.css) */
+.dataset-meta {
+    background: #f7f9fc;
+    border: 1px solid #e1e6ef;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin: 16px 0 24px;
+}
+
+.dataset-meta dt {
+    font-weight: bold;
+    color: #1f3864;
+}
+
+.dataset-meta dd {
+    margin: 0 0 8px 0;
+}
+
+/* ================= whiteboard-specific styles ================= */
 
 body.wide {
     max-width: 1120px;
